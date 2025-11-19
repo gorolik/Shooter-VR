@@ -4,7 +4,7 @@ namespace Sources.Master.ManipulatingSystem
 {
     public class DragAxisHandle : MonoBehaviour
     {
-        [SerializeField] private Transform _target;
+        [SerializeField] private Transformable _target;
         [SerializeField] private float _sensitivity = 0.01f;
 
         private Camera _camera;
@@ -15,7 +15,7 @@ namespace Sources.Master.ManipulatingSystem
         public void Init(Camera handleCamera) => 
             _camera = handleCamera;
 
-        public void SetTarget(Transform target) => 
+        public void SetTarget(Transformable target) => 
             _target = target;
 
         private void OnMouseDown()
@@ -25,11 +25,19 @@ namespace Sources.Master.ManipulatingSystem
 
             _isDragging = true;
             _dragStartMousePos = Input.mousePosition;
-            _dragStartTargetPos = _target.position;
+            _dragStartTargetPos = _target.transform.position;
+            
+            _target.BeginPCManipulation();
         }
 
-        private void OnMouseUp() => 
+        private void OnMouseUp()
+        {
+            if (!_isDragging)
+                return;
+            
             _isDragging = false;
+            _target.EndPCManipulation();
+        }
 
         private void OnMouseDrag()
         {
@@ -38,13 +46,13 @@ namespace Sources.Master.ManipulatingSystem
 
             Vector3 moveDirection = transform.forward;
             Vector3 mouseDelta = Input.mousePosition - _dragStartMousePos;
-            Vector3 axisScreenDir = _camera.WorldToScreenPoint(_target.position + moveDirection) -
-                                    _camera.WorldToScreenPoint(_target.position);
+            Vector3 axisScreenDir = _camera.WorldToScreenPoint(_target.transform.position + moveDirection) -
+                                    _camera.WorldToScreenPoint(_target.transform.position);
             axisScreenDir.z = 0f;
 
             float distanceAlongAxis = Vector3.Dot(mouseDelta, axisScreenDir.normalized) * _sensitivity;
 
-            _target.position = _dragStartTargetPos + moveDirection * distanceAlongAxis;
+            _target.transform.position = _dragStartTargetPos + moveDirection * distanceAlongAxis;
         }
     }
 }

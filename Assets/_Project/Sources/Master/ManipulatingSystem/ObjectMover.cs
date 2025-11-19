@@ -39,7 +39,7 @@ namespace Sources.Master.ManipulatingSystem
                 return;
             }
 
-            _transformInterface.SetTarget(_transformable.transform);
+            _transformInterface.SetTarget(_transformable);
         }
 
         private void ObjectDeselected()

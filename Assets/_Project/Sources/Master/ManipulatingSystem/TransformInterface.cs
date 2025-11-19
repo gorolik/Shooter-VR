@@ -8,7 +8,7 @@ namespace Sources.Master.ManipulatingSystem
         [SerializeField] private GameObject _view;
         [SerializeField] private DragAxisHandle[] _dragAxisHandles;
         
-        private Transform _target;
+        private Transformable _target;
 
         public void Init(Camera handleCamera)
         {
@@ -23,11 +23,11 @@ namespace Sources.Master.ManipulatingSystem
             if (!_target)
                 return;
             
-            transform.position = _target.position;
+            transform.position = _target.transform.position;
             transform.rotation = Quaternion.identity;
         }
 
-        public void SetTarget(Transform target)
+        public void SetTarget(Transformable target)
         {
             _target = target;
             _view.SetActive(target);
