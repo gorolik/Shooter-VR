@@ -12,6 +12,13 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Items/VROwnershipHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Files/Projects/Unity Projects/Shooter-VR/Assets/_Project/Sources/Items/Weapon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Files/Projects/Unity Projects/Shooter-VR/Assets/_Project/Sources/Items/Weapon.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Items/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Items/WeaponLogic/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Items/WeaponLogic/WeaponView.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Files/Projects/Unity Projects/Shooter-VR/Assets/_Project/Sources/Items/WeaponLogic/WeaponView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/Files/Projects/Unity Projects/Shooter-VR/Assets/_Project/Sources/Items/WeaponLogic/WeaponView.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -94,6 +101,9 @@
       <updated>1716807581501</updated>
       <workItem from="1763540081242" duration="1300000" />
       <workItem from="1763543089299" duration="2673000" />
+      <workItem from="1763548309538" duration="1960000" />
+      <workItem from="1763550304105" duration="2167000" />
+      <workItem from="1763615016174" duration="3822000" />
     </task>
     <servers />
   </component>

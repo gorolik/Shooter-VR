@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Sources.Master.ManipulatingSystem
+namespace Sources.Items
 {
     public class Selectable : MonoBehaviour
     {
