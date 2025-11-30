@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "XR Interaction Simulator Controls",
     "maps": [
         {
@@ -199,30 +200,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "3d2e07de-025e-4c2e-98df-250511a8ff6d",
-                    "path": "<Keyboard>/a",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "X Translate",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "04e1437d-c862-4a04-8f8e-40e9f52c4f5e",
-                    "path": "<Keyboard>/d",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "X Translate",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "1D Axis",
-                    "id": "cb7c4679-31f4-4170-885a-e7d78c049443",
+                    "id": "8f6764e7-dcec-43d4-a58e-9fb8ca8ec8ad",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -232,30 +211,8 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "negative",
-                    "id": "732e790c-f2a2-4f90-b525-53139a358de7",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Z Translate",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "positive",
-                    "id": "d5a98916-ade7-419d-a138-86bcdf05670f",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Z Translate",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
                     "name": "1D Axis",
-                    "id": "fca20498-bf6f-4824-ba15-6dc2d191eb2f",
+                    "id": "8626d9d1-74d1-4a3f-a7b0-a726efc8153f",
                     "path": "1DAxis",
                     "interactions": "",
                     "processors": "",
@@ -266,7 +223,7 @@
                 },
                 {
                     "name": "negative",
-                    "id": "2c01790c-a24a-4266-a2e9-74e2a1ca3fa7",
+                    "id": "13fc0480-e890-47ab-b8de-8f0de2d3a80a",
                     "path": "<Keyboard>/q",
                     "interactions": "",
                     "processors": "",
@@ -277,7 +234,7 @@
                 },
                 {
                     "name": "positive",
-                    "id": "f5223aed-93c0-4633-8aa3-c393ce890872",
+                    "id": "57cc9b50-1715-4216-b281-d63106412c34",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",

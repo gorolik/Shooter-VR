@@ -1,4 +1,6 @@
-﻿using Unity.Netcode;
+﻿using System;
+using Sources.Items;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
 using UnityEngine.XR.Interaction.Toolkit.Interactors;
@@ -8,6 +10,11 @@ namespace Sources.Player
     public class PlayerRoot : NetworkBehaviour
     {
         [SerializeField] private GameObject _xrOrigin;
+        [SerializeField] private Health _health;
+        
+        public event Action<PlayerRoot> OnDie;
+
+        public Health Health => _health;
 
         public override void OnNetworkSpawn()
         {
@@ -15,6 +22,33 @@ namespace Sources.Player
             
             if (!IsOwner)
                 DisableXRInput();
+
+            _health.OnDie += OnHealthDie;
+        }
+
+        public override void OnNetworkDespawn()
+        {
+            base.OnNetworkDespawn();
+            
+            _health.OnDie -= OnHealthDie;
+        }
+
+        private void OnHealthDie()
+        {
+            OnDie?.Invoke(this);
+        }
+
+        public void Respawn(Vector3 position, Quaternion rotation)
+        {
+            TeleportClientRpc(position, rotation);
+            _health.Restore();
+        }
+        
+        [ClientRpc]
+        public void TeleportClientRpc(Vector3 position, Quaternion rotation)
+        {
+            transform.position = position;
+            transform.rotation = rotation;
         }
 
         private void DisableXRInput()

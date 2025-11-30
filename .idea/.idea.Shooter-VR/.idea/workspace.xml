@@ -11,14 +11,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Infrastructure/Game.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Infrastructure/XRLauncher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Items/VROwnershipHandler.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Files/Projects/Unity Projects/Shooter-VR/Assets/_Project/Sources/Items/Weapon.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Files/Projects/Unity Projects/Shooter-VR/Assets/_Project/Sources/Items/Weapon.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Items/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Items/WeaponLogic/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/Items/WeaponLogic/WeaponView.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Files/Projects/Unity Projects/Shooter-VR/Assets/_Project/Sources/Items/WeaponLogic/WeaponView.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/Files/Projects/Unity Projects/Shooter-VR/Assets/_Project/Sources/Items/WeaponLogic/WeaponView.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/UI/HostInfoDisplay.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Project/Sources/UI/WelcomeUI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.multiplayer.center.quickstart@1fcc41c23ee5/Runtime/NetcodeForGameObjectsExample/TemporaryUI.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
@@ -104,6 +104,7 @@
       <workItem from="1763548309538" duration="1960000" />
       <workItem from="1763550304105" duration="2167000" />
       <workItem from="1763615016174" duration="3822000" />
+      <workItem from="1764481834467" duration="12022000" />
     </task>
     <servers />
   </component>

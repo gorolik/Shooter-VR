@@ -7,8 +7,7 @@ namespace Sources.Infrastructure
 {
     public class NetworkBootstrapper : NetworkBehaviour
     {
-        [SerializeField] private MasterSpawner _masterSpawner;
-        [SerializeField] private PlayerSpawner _playerSpawner;
+        [SerializeField] private Game _game;
         
         public void Init()
         {
@@ -39,12 +38,12 @@ namespace Sources.Infrastructure
 
         private void InitAsMaster(ulong clientId)
         {
-            _masterSpawner.Spawn(clientId);
+            _game.InitMaster(clientId);
         }
 
         private void InitAsPlayer(ulong clientId)
         {
-            _playerSpawner.Spawn(clientId);
+            _game.InitPlayer(clientId);
         }
     }
 }

@@ -42,9 +42,13 @@ namespace Sources.Items.WeaponLogic
         private void ShootServerRpc(Vector3 rayOrigin, Vector3 rayDirection)
         {
             if (Physics.Raycast(rayOrigin, rayDirection, out RaycastHit hit, _range))
-                if (hit.transform.TryGetComponent<Damagable>(out var target)) 
-                    target.Damage(_damage);
-            
+            {
+                Damagable damagable = hit.transform.GetComponentInParent<Damagable>();
+                
+                if (damagable)
+                    damagable.Damage(_damage);
+            }
+
             ShootClientRpc(hit.collider, hit.point, hit.normal);
         }
 
