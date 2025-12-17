@@ -359,7 +359,7 @@ MonoBehaviour:
   _camera: {fileID: 3427208047272805563}
   _layerMask:
     serializedVersion: 2
-    m_Bits: 65
+    m_Bits: 321
   _highlightedMaterial: {fileID: 2100000, guid: 0efd510fab5e53e4fa7cca573199befe, type: 2}
   _selectedMaterial: {fileID: 2100000, guid: 3dadf9b08cf7d1244ad0579e09b44efe, type: 2}
 --- !u!114 &3155884610006920706

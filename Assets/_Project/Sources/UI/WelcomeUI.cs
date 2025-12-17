@@ -11,6 +11,7 @@ namespace Sources.UI
     public class WelcomeUI : MonoBehaviour
     {
         [SerializeField] private XRLauncher _xrLauncher;
+        [SerializeField] private NetworkBootstrapper _networkBootstrapper;
         [Header("UI elements")] 
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private Camera _defaultCamera;
@@ -20,8 +21,9 @@ namespace Sources.UI
         [SerializeField] private TMP_InputField _addressInputField;
         [SerializeField] private TMP_InputField _clientPortInputField;
         [SerializeField] private Toggle _vrSetToggle;
+        [SerializeField] private Toggle _masterToggle;
         [SerializeField] private TMP_Text _errorMessage;
-
+        
         public void Init()
         {
             _hostButton.onClick.AddListener(OnHostButtonClick);
@@ -52,6 +54,8 @@ namespace Sources.UI
             
             try
             {
+                _networkBootstrapper.IsMasterNeed = _masterToggle.isOn;
+                
                 string ip = "0.0.0.0";
                 string port = _hostPortInputField.text;
                 NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(ip, ushort.Parse(port));

@@ -9,28 +9,31 @@ namespace Sources.Items
         [SerializeField] private float _maxHealth = 100f;
         [SerializeField] private bool _destroyOnDie = true;
         
-        private readonly NetworkVariable<float> _currentHealth = new();
+        public readonly NetworkVariable<float> CurrentHealth = new();
+
+        public float maxHealth => _maxHealth;
 
         public event Action OnDie;
         
         public override void OnNetworkSpawn()
         {
             if (IsServer) 
-                _currentHealth.Value = _maxHealth;
+                CurrentHealth.Value = _maxHealth;
         }
 
         public void Restore() => 
-            _currentHealth.Value = _maxHealth;
+            CurrentHealth.Value = _maxHealth;
 
         public override void Damage(float amount)
         {
             if (amount < 0)
                 return;
 
-            _currentHealth.Value -= amount;
-            Debug.Log($"{gameObject.name} took {amount} damage. Current health: {_currentHealth.Value}");
+            CurrentHealth.Value -= amount;
+            
+            Debug.Log($"{gameObject.name} took {amount} damage. Current health: {CurrentHealth.Value}");
 
-            if (_currentHealth.Value <= 0)
+            if (CurrentHealth.Value <= 0)
             {
                 OnDie?.Invoke();
                 

@@ -9,6 +9,8 @@ namespace Sources.Infrastructure
     {
         [SerializeField] private Game _game;
         
+        public bool IsMasterNeed;
+        
         public void Init()
         {
             if (NetworkManager.Singleton)
@@ -30,7 +32,7 @@ namespace Sources.Infrastructure
             if (!IsServer)
                 return;
             
-            if (NetworkManager.Singleton.SpawnManager.PlayerObjects.Count == 0)
+            if (NetworkManager.Singleton.SpawnManager.PlayerObjects.Count == 0 && IsMasterNeed)
                 InitAsMaster(clientId);
             else
                 InitAsPlayer(clientId);

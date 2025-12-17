@@ -9,7 +9,7 @@ namespace Sources.Infrastructure
     {
         [SerializeField] private MasterSpawner _masterSpawner;
         [SerializeField] private PlayerSpawner _playerSpawner;
-
+        
         private List<PlayerRoot> _players = new();
 
         public void InitMaster(ulong clientId)

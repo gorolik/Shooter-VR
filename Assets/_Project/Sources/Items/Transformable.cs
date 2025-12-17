@@ -1,4 +1,5 @@
-﻿using Unity.Netcode;
+﻿using System.Linq;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.Interactables;
@@ -30,16 +31,8 @@ namespace Sources.Items
         {
             var networkObject = GetComponent<NetworkObject>();
             networkObject.ChangeOwnership(serverRpcParams.Receive.SenderClientId);
-            
-            if (_interactable != null && _interactable.isSelected)
-            {
-                if (_interactionManager == null) 
-                    _interactionManager = FindObjectOfType<XRInteractionManager>();
 
-                if (_interactionManager != null) 
-                    _interactionManager.CancelInteractableSelection((IXRSelectInteractable)_interactable);
-            }
-            
+            ForceDropClientRpc();
             SetKinematicStateClientRpc(true);
         }
 
@@ -57,6 +50,19 @@ namespace Sources.Items
         {
             if (_rigidbody) 
                 _rigidbody.isKinematic = isKinematic;
+        }
+        
+        [ClientRpc]
+        private void ForceDropClientRpc()
+        {
+            if (_interactable && _interactable.isSelected)
+            {
+                var manager = _interactable.interactionManager;
+                var hand = _interactable.interactorsSelecting.FirstOrDefault();
+
+                if (manager != null && hand != null) 
+                    manager.SelectExit(hand, _interactable);
+            }
         }
     }
 }
